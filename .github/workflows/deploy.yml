@@ -37,7 +37,7 @@ jobs:
       run: |
         retry() {
           local n=1
-          local max=5
+          local max=1
           local delay=15
           while true; do
             "$@" && break || {

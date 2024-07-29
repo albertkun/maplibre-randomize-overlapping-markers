@@ -4,10 +4,20 @@
     "description": "A MapLibre GL plugin to randomize overlapping markers on the map.",
     "main": "webpack.config.js",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "build": "webpack --config webpack.config.js"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack --config webpack.config.js"
     },
-    "keywords": ["maplibre", "plugin", "markers", "randomize"],
+    "keywords": [
+        "maplibre",
+        "plugin",
+        "markers",
+        "randomize"
+    ],
     "author": "Albert Kochaphum",
-    "license": "Do No Harm"
+    "license": "Do No Harm",
+    "devDependencies": {
+        "@babel/core": "^7.24.9",
+        "@babel/preset-env": "^7.25.0",
+        "babel-loader": "^9.1.3"
+    }
 }

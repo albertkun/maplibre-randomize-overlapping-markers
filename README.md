@@ -13,11 +13,53 @@ You can include the module directly in your HTML file using a CDN.
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@1.15.2/dist/maplibre-gl.js"></script>
-<script src="https://www.npmjs.com/package/maplibre-randomize-overlapping-markers@1.0.0.js"></script>
+<script src="https://unpkg.com/maplibre-randomize-overlapping-markers/dist/bundle.js"></script>
+
 ```
 
+## API
+
+### Class name: PointManager
+
+PointManager.addPointData(longitude, latitude, radius) - Adds a point to the map and returns the new point's coordinates.
+
+### Parameters
+
+- `longitude` - The longitude of the point.
+- `latitude` - The latitude of the point.
+- `radius` - The radius of the area around the point where other points should not be placed.
+
+| Parameter | Type     | Required | Description                           |
+|-----------|----------|----------|---------------------------------------|
+| longitude | number   | Yes      | The longitude of the point.           |
+| latitude  | number   | Yes      | The latitude of the point.            |
+| radius    | number   | No      | The radius of the area around the point where other points should not be placed. Default is 0.01 when it is not set. |
+
+
+### Example
+
+	PointManager.addPointData(longitude, latitude, 25);
+
+
 ## Usage
+
+> Note: Make sure your `init.js` is a module script otherwise the import will not work.
+
+```html
+<script type="module" src="init.js"></script>
+```
+
 Here is a simple example of how to use the `maplibre-randomize-overlapping-markers` script in vanilla JavaScript:
+
+```javascript title="init.js"
+
+	[longitude,latitude] = PointManager.addPointData(longitude, latitude, 25);
+    new maplibregl.Marker({element:newMarkerElement})
+        .setLngLat([longitude, latitude])
+        .setPopup(new maplibregl.Popup()
+            .setHTML('Hello'))
+        .addTo(map)
+```
 
 ```html
 <!DOCTYPE html>
@@ -27,7 +69,8 @@ Here is a simple example of how to use the `maplibre-randomize-overlapping-marke
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MapLibre Randomize Overlapping Markers Example</title>
     <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@1.15.2/dist/maplibre-gl.js"></script>
-	<script src="https://www.npmjs.com/package/maplibre-randomize-overlapping-markers@1.0.0.js"></script>
+	<script src="https://unpkg.com/maplibre-randomize-overlapping-markers/dist/bundle.js"></script>
+
 
     <style>
         #map {

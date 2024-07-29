@@ -101,6 +101,6 @@ public
 
 # VS Code
 .vscode/
-
+.npmrc
 # Webpack output
 dist/

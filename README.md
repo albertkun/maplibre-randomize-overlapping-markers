@@ -27,7 +27,8 @@ Here is a simple example of how to use the `maplibre-randomize-overlapping-marke
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MapLibre Randomize Overlapping Markers Example</title>
     <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@1.15.2/dist/maplibre-gl.js"></script>
-    <script src="https://albertkun.github.io/maplibre-randomize-overlapping-markers/randomizeMarkers.js"></script>
+	<script src="https://www.npmjs.com/package/maplibre-randomize-overlapping-markers@1.0.0.js"></script>
+
     <style>
         #map {
             width: 100%;

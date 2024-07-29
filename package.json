@@ -1,0 +1,12 @@
+{
+	"name": "maplibre-randomize-overlapping-markers",
+	"version": "1.0.0",
+	"description": "A MapLibre GL plugin to randomize overlapping markers on the map.",
+	"main": "webpack.config.js",
+	"scripts": {
+	  "test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": ["maplibre", "plugin", "markers", "randomize"],
+	"author": "Albert Kochaphum",
+	"license": "Do No Harm"
+  }

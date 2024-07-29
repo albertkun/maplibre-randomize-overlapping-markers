@@ -13,7 +13,7 @@ You can include the module directly in your HTML file using a CDN.
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@1.15.2/dist/maplibre-gl.js"></script>
-<script src="https://albertkun.github.io/maplibre-randomize-overlapping-markers/randomizeMarkers.js"></script>
+<script src="https://www.npmjs.com/package/maplibre-randomize-overlapping-markers@1.0.0.js"></script>
 ```
 
 ## Usage

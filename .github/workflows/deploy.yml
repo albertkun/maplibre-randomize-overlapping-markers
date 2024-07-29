@@ -5,6 +5,9 @@ on:
     branches:
       - main  # Trigger the workflow on push to the main branch
 
+permissions:
+  contents: write  # Ensure the token has write permissions for contents
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,8 +27,31 @@ jobs:
     - name: Build the project
       run: npm run build
 
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist  # Directory to deploy
 
     - name: Publish to npm
-      run: npm publish
+      run: |
+        retry() {
+          local n=1
+          local max=5
+          local delay=15
+          while true; do
+            "$@" && break || {
+              if [[ $n -lt $max ]]; then
+                ((n++))
+                echo "Command failed. Attempt $n/$max:"
+                sleep $delay;
+              else
+                echo "The command has failed after $n attempts."
+                return 1
+              fi
+            }
+          done
+        }
+        retry npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

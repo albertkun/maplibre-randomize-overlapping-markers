@@ -1,6 +1,7 @@
 # maplibre-randomize-overlapping-markers
 
 ## Overview
+
 [`maplibre-randomize-overlapping-markers`](command:_github.copilot.openSymbolFromReferences?%5B%7B%22%24mid%22%3A1%2C%22path%22%3A%22%2Fc%3A%2FUsers%2Fhikou%2Frepos%2Fucla%2Fmaplibre-randomize-overlapping-markers%2FREADME.md%22%2C%22scheme%22%3A%22file%22%7D%2C%7B%22line%22%3A0%2C%22character%22%3A0%7D%5D "README.md") is a module designed to handle the randomization of overlapping markers on a MapLibre map. This helps in improving the visualization of densely packed markers by spreading them out randomly to avoid overlap.
 
 ## Features
@@ -12,9 +13,7 @@
 You can include the module directly in your HTML file using a CDN.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@1.15.2/dist/maplibre-gl.js"></script>
 <script src="https://unpkg.com/maplibre-randomize-overlapping-markers/dist/bundle.js"></script>
-
 ```
 
 ## API
